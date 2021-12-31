@@ -1,0 +1,933 @@
+{
+	"info": {
+		"_postman_id": "ac302076-27c5-4a89-bb09-072a44008199",
+		"name": "REST-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Wallet",
+			"item": [
+				{
+					"name": "Get Wallet History",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/core/rest-api-php-mysql/wallet",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"core",
+								"rest-api-php-mysql",
+								"wallet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Wallet",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "coin",
+									"value": "250",
+									"type": "default"
+								},
+								{
+									"key": "userId",
+									"value": "1",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/core/rest-api-php-mysql/wallet/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"core",
+								"rest-api-php-mysql",
+								"wallet",
+								"create"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "coin",
+									"value": "500",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Wallet",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "coin",
+									"value": "250",
+									"type": "text"
+								},
+								{
+									"key": "userId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "walletId",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/core/rest-api-php-mysql/wallet/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"core",
+								"rest-api-php-mysql",
+								"wallet",
+								"update"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "coin",
+									"value": "500",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Wallet",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "walletId",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/core/rest-api-php-mysql/wallet/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"core",
+								"rest-api-php-mysql",
+								"wallet",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Specific Wallet History",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/core/rest-api-php-mysql/wallet?id=3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"core",
+								"rest-api-php-mysql",
+								"wallet"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Loan",
+			"item": [
+				{
+					"name": "Loan Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "4",
+									"type": "default"
+								},
+								{
+									"key": "loanId",
+									"value": "16",
+									"type": "default"
+								},
+								{
+									"key": "loan_status",
+									"value": "1",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/core/rest-api-php-mysql/loan/request",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"core",
+								"rest-api-php-mysql",
+								"loan",
+								"request"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Loan History",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/core/rest-api-php-mysql/loan",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"core",
+								"rest-api-php-mysql",
+								"loan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Loan",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "loan_amount",
+									"value": "2300000",
+									"type": "default"
+								},
+								{
+									"key": "loan_type",
+									"value": "Professional Loan",
+									"type": "default"
+								},
+								{
+									"key": "agent_name",
+									"value": "Gems",
+									"type": "default"
+								},
+								{
+									"key": "rate_of_Interest",
+									"value": "4.77",
+									"type": "default"
+								},
+								{
+									"key": "duration",
+									"value": "90 Month",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/core/rest-api-php-mysql/loan/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"core",
+								"rest-api-php-mysql",
+								"loan",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Loan",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "loan_amount",
+									"value": "2300000",
+									"type": "text"
+								},
+								{
+									"key": "loan_type",
+									"value": "Professional Loan",
+									"type": "text"
+								},
+								{
+									"key": "agent_name",
+									"value": "Gems",
+									"type": "text"
+								},
+								{
+									"key": "rate_of_Interest",
+									"value": "4.77",
+									"type": "text"
+								},
+								{
+									"key": "duration",
+									"value": "100 Month",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "18",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/core/rest-api-php-mysql/loan/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"core",
+								"rest-api-php-mysql",
+								"loan",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Loan",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/core/rest-api-php-mysql/loan/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"core",
+								"rest-api-php-mysql",
+								"loan",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Specific Loan History",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/core/rest-api-php-mysql/loan?id=16",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"core",
+								"rest-api-php-mysql",
+								"loan"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "16"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Insurance",
+			"item": [
+				{
+					"name": "Get Insurance History",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/core/rest-api-php-mysql/insurance",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"core",
+								"rest-api-php-mysql",
+								"insurance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Insurance",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "insurance_amount",
+									"value": "2300000",
+									"type": "default"
+								},
+								{
+									"key": "insurance_type",
+									"value": "Professional Loan",
+									"type": "default"
+								},
+								{
+									"key": "agent_name",
+									"value": "Gems",
+									"type": "default"
+								},
+								{
+									"key": "duration",
+									"value": "90 Month",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/core/rest-api-php-mysql/insurance/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"core",
+								"rest-api-php-mysql",
+								"insurance",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Insurance",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "insurance_amount",
+									"value": "2300000",
+									"type": "text"
+								},
+								{
+									"key": "insurance_type",
+									"value": "Professional Loan",
+									"type": "text"
+								},
+								{
+									"key": "agent_name",
+									"value": "Gems",
+									"type": "text"
+								},
+								{
+									"key": "duration",
+									"value": "90 Month",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "18",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/core/rest-api-php-mysql/insurance/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"core",
+								"rest-api-php-mysql",
+								"insurance",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Insurance",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/core/rest-api-php-mysql/insurance/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"core",
+								"rest-api-php-mysql",
+								"insurance",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Specific Insurance History",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/core/rest-api-php-mysql/insurance?id=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"core",
+								"rest-api-php-mysql",
+								"insurance"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insurance Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "4",
+									"type": "default"
+								},
+								{
+									"key": "insuranceId",
+									"value": "2",
+									"type": "default"
+								},
+								{
+									"key": "insurance_status",
+									"value": "1",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/core/rest-api-php-mysql/insurance/request",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"core",
+								"rest-api-php-mysql",
+								"insurance",
+								"request"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transaction",
+			"item": [
+				{
+					"name": "Get Transaction History",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/core/rest-api-php-mysql/transaction",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"core",
+								"rest-api-php-mysql",
+								"transaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Transaction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "transaction_amount",
+									"value": "230",
+									"type": "default"
+								},
+								{
+									"key": "transaction_time",
+									"value": "2021-12-20 14:58:21",
+									"type": "default"
+								},
+								{
+									"key": "from_account",
+									"value": "31628851427",
+									"type": "default"
+								},
+								{
+									"key": "to_account",
+									"value": "31628851428",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/core/rest-api-php-mysql/transaction/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"core",
+								"rest-api-php-mysql",
+								"transaction",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Transaction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "transaction_amount",
+									"value": "230",
+									"type": "text"
+								},
+								{
+									"key": "transaction_time",
+									"value": "2021-12-20 14:58:21",
+									"type": "text"
+								},
+								{
+									"key": "from_account",
+									"value": "31628851427",
+									"type": "text"
+								},
+								{
+									"key": "to_account",
+									"value": "31628851428",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "18",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/core/rest-api-php-mysql/transaction/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"core",
+								"rest-api-php-mysql",
+								"transaction",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Transaction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/core/rest-api-php-mysql/transaction/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"core",
+								"rest-api-php-mysql",
+								"transaction",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Specific Transaction",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/core/rest-api-php-mysql/transaction?id=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"core",
+								"rest-api-php-mysql",
+								"transaction"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "abc@gmail.com",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/core/rest-api-php-mysql/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"core",
+						"rest-api-php-mysql",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "gems@mailinator.com",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "default"
+						},
+						{
+							"key": "name",
+							"value": "gems",
+							"type": "default"
+						},
+						{
+							"key": "phone_num",
+							"value": "9428854500",
+							"type": "default"
+						},
+						{
+							"key": "occupation",
+							"value": "Developer",
+							"type": "default"
+						},
+						{
+							"key": "adhar_number",
+							"value": "9898098980",
+							"type": "default"
+						},
+						{
+							"key": "annual_Income",
+							"value": "5500000",
+							"type": "default"
+						},
+						{
+							"key": "agent",
+							"value": "Same",
+							"type": "default"
+						},
+						{
+							"key": "dob",
+							"value": "1982-05-07",
+							"type": "default"
+						},
+						{
+							"key": "address",
+							"value": "Surat",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/core/rest-api-php-mysql/user/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"core",
+						"rest-api-php-mysql",
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
