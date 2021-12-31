@@ -13,13 +13,13 @@ if(!empty($data['id'])) {
 	$loan->loanId = $data['id'];
 	if($loan->delete()){
 		http_response_code(200); 
-		echo json_encode(array("message" => "Loan was deleted."));
+		echo json_encode( [ "message" => "Loan was deleted." ] );
 	} else {
 		http_response_code(503);   
-		echo json_encode(array("message" => "Unable to delete loan."));
+		echo json_encode( [ "message" => "Unable to delete loan." ] );
 	}
 } else {
-	http_response_code(400);    
-	echo json_encode(array("message" => "Unable to delete loan. Data is incomplete."));
+	http_response_code(400);
+	echo json_encode( [ "message" => "Unable to delete loan. Data is incomplete." ] );
 }
 ?>

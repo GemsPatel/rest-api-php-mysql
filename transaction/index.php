@@ -29,5 +29,5 @@ if($result->num_rows > 0){
     echo json_encode( [ 'result' => $transactionRecords ] );
 }else{
     http_response_code(404);
-    echo json_encode( array("message" => "No transaction found.") );
+    echo json_encode(  [ "message" => "No transaction found." ] );
 } 

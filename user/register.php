@@ -8,10 +8,69 @@ $db = $database->getConnection();
 $user = new user($db);
  
 $data = $_POST;
+$success = true;
+if( empty($data['email'] ) ){
+	http_response_code(400);
+	echo json_encode( ["message" => "Enter your email address" ] );
+	$success = false;
+}
+
+if( empty($data['name'] ) ){
+	http_response_code(400);
+	echo json_encode( ["message" => "Enter your name" ] );
+	$success = false;
+}
+
+if( empty($data['phone_num'] ) ){
+	http_response_code(400);
+	echo json_encode( ["message" => "Enter your phone number" ] );
+	$success = false;
+}
+
+if( empty($data['password'] ) ){
+	http_response_code(400);
+	echo json_encode( ["message" => "Enter your password" ] );
+	$success = false;
+}
+
+if( empty($data['occupation'] ) ){
+	http_response_code(400);
+	echo json_encode( ["message" => "Enter your occupation" ] );
+	$success = false;
+}
+
+if( empty($data['adhar_number'] ) ){
+	http_response_code(400);
+	echo json_encode( ["message" => "Enter your adhar number" ] );
+	$success = false;
+}
+
+if( empty($data['annual_Income'] ) ){
+	http_response_code(400);
+	echo json_encode( ["message" => "Enter your annual income" ] );
+	$success = false;
+}
+
+if( empty($data['agent'] ) ){
+	http_response_code(400);
+	echo json_encode( ["message" => "Enter your agent" ] );
+	$success = false;
+}
+
+if( empty($data['dob'] ) ){
+	http_response_code(400);
+	echo json_encode( ["message" => "Select your Date of Birth" ] );
+	$success = false;
+}
+
+if( empty($data['address'] ) ){
+	http_response_code(400);
+	echo json_encode( ["message" => "Enter your address" ] );
+	$success = false;
+}
 
 
-if(!empty($data['email']) && !empty($data['name']) && !empty($data['phone_num']) && !empty($data['password']) && !empty($data['occupation']) && !empty($data['adhar_number']) && !empty($data['annual_Income']) && !empty($data['agent']) && !empty($data['dob']) && !empty($data['address'])){ 
-
+if( $success ){
     $user->email = $data['email'];
     $user->name = $data['name'];
     $user->phone_num = $data['phone_num'];
@@ -27,21 +86,22 @@ if(!empty($data['email']) && !empty($data['name']) && !empty($data['phone_num'])
 
     if (!filter_var($user->email, FILTER_VALIDATE_EMAIL)) {
         http_response_code(503);
-        echo json_encode(array("message" => "Invalid email format."));
+        echo json_encode( [ "message" => "Invalid email format." ] );
     }elseif($result->num_rows > 0){
         http_response_code(503);
-            echo json_encode(array("message" => "Email already exist."));
+            echo json_encode( [ "message" => "Email already exist." ] );
     }else{
         if($user->register()){
             http_response_code(201);
-            echo json_encode(array("message" => "Register created successfully."));
+            echo json_encode( [ "message" => "Register created successfully." ] );
         } else{
             http_response_code(503);
-            echo json_encode(array("message" => "Unable to create user."));
+            echo json_encode( [ "message" => "Unable to create user." ] );
         }
     }
-}else{    
-    http_response_code(400);
-    echo json_encode(array("message" => "Unable to create user. Data is incomplete."));
 }
+// else{    
+//     http_response_code(400);
+//     echo json_encode( [ "message" => "Unable to create user. Data is incomplete." ] );
+// }
 ?>

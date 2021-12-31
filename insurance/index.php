@@ -30,5 +30,5 @@ if($result->num_rows > 0){
     echo json_encode( ['result' => $insuranceRecords]);
 }else{
     http_response_code(404);
-    echo json_encode( array("message" => "No insurance found.") );
+    echo json_encode( [ "message" => "No insurance found." ] );
 } 

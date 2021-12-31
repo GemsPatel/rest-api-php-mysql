@@ -27,5 +27,5 @@ if($result->num_rows > 0){
     echo json_encode( [ 'result' => $walletRecords ] );
 }else{
     http_response_code(404);
-    echo json_encode( array("message" => "No Wallet found.") );
+    echo json_encode( [ "message" => "No Wallet found." ] );
 } 

@@ -10,7 +10,28 @@ $user = new User($db);
 $insurance = new insurance($db);
 $data = $_POST;
 
-if(!empty($data['id']) && !empty($data['insuranceId']) && !empty($data['insurance_status'])){
+$success = true;
+
+if( empty($data['id'] ) ){
+    http_response_code(400);
+    echo json_encode( ["message" => "Select insurance." ] );
+    $success = false;
+}
+
+if( empty($data['insuranceId'] ) ){
+    http_response_code(400);
+    echo json_encode( ["message" => "Select insurance ID." ] );
+    $success = false;
+}
+
+if( empty($data['insurance_status'] ) ){
+    http_response_code(400);
+    echo json_encode( ["message" => "Select insurance status." ] );
+    $success = false;
+}
+
+
+if( $success ){
     $user->userId = $data['id'];
     $result = $user->read();
     if($result->num_rows > 0){
@@ -24,30 +45,25 @@ if(!empty($data['id']) && !empty($data['insuranceId']) && !empty($data['insuranc
             if($res->num_rows > 0){
                 if($insurance->request()){
                     http_response_code(200);
-                    echo json_encode(array("message" => "insurance was accetpted."));
+                    echo json_encode( [ "message" => "insurance was accetpted." ] );
                 }else{
                     http_response_code(503);
-                    echo json_encode(array("message" => "Unable to accetpted/rejected status insurance."));
+                    echo json_encode( ["message" => "Unable to accetpted/rejected status insurance." ]);
                 }
             }else{
                 http_response_code(404);
-                echo json_encode(array("message" => "No insurance found."));
+                echo json_encode( [ "message" => "No insurance found." ] );
             }
         }else{
             http_response_code(400);
-            echo json_encode(array("message" => "Only agent are accetpted/rejected insurance."));
+            echo json_encode( ["message" => "Only agent are accetpted/rejected insurance." ] );
         }
     }else{
         http_response_code(404);
-        echo json_encode(
-            array("message" => "No user found.")
-        );
+        echo json_encode( [ "message" => "No user found." ] );
     } 
-}else {
-    http_response_code(400);
-    echo json_encode(array("message" => "Unable to update transaction. Data is incomplete."));
 }
-
-
-
-
+// else {
+//     http_response_code(400);
+//     echo json_encode(array("message" => "Unable to update transaction. Data is incomplete."));
+// }

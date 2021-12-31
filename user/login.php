@@ -27,5 +27,5 @@ if($result->num_rows > 0){
     echo json_encode( [ 'result' => $userRecords, 'message' => 'Login successfully.' ] );
 }else{
     http_response_code(404);
-    echo json_encode( array("message" => "Incorrect username or password.") );
+    echo json_encode( [ "message" => "Incorrect username or password." ] );
 }
